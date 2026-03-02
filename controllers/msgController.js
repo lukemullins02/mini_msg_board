@@ -13,6 +13,21 @@ const createMsg = (req, res) => {
 const renderForm = (req, res) => res.render("form");
 
 const renderIndex = (req, res) =>
-  res.render("index", { title: "Mini Messageboard", messages: messages });
+  res.render("index", {
+    title: "Mini Messageboard",
+    messages: messages,
+  });
 
-module.exports = { createMsg, renderForm, renderIndex };
+const renderMessages = (req, res) => {
+  res.render("details", {
+    title: "Details",
+    message: messages[Number(req.params.index)],
+  });
+};
+
+module.exports = {
+  createMsg,
+  renderForm,
+  renderIndex,
+  renderMessages,
+};
