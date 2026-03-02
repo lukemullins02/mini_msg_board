@@ -1,4 +1,5 @@
 const messages = require("../db.js");
+const CustomNotFoundError = require("../errors/CustomNotFoundError");
 
 const createMsg = (req, res) => {
   messages.push({
@@ -19,6 +20,10 @@ const renderIndex = (req, res) =>
   });
 
 const renderMessages = (req, res) => {
+  if (!messages[Number(req.params.index)]) {
+    throw new CustomNotFoundError("Message index out of bounds");
+  }
+
   res.render("details", {
     title: "Details",
     message: messages[Number(req.params.index)],
