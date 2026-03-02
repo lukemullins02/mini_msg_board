@@ -1,0 +1,24 @@
+{
+  "name": "mini_msg_board",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukemullins02/mini_msg_board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukemullins02/mini_msg_board/issues"
+  },
+  "homepage": "https://github.com/lukemullins02/mini_msg_board#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}
