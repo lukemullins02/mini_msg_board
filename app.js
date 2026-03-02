@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
-const msgRouter = require("./routes/msgRouter");
 const path = require("node:path");
+const msgRouter = require("./routes/msgRouter");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/", msgRouter);
 

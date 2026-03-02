@@ -1,8 +1,13 @@
-<html>
-  <head>
-    New Message
-  </head>
-  <body>
-    <h1>Hi</h1>
-  </body>
-</html>
+<head>
+  New Message
+</head>
+
+<form method="POST" action="/new">
+  <label for="user">Name: </label>
+  <input type="text" name="user" id="user" required />
+
+  <label for="text">Message: </label>
+  <input type="text" name="text" id="text" required />
+
+  <input type="submit" value="Submit" />
+</form>
