@@ -30,9 +30,14 @@ const renderMessages = (req, res) => {
   });
 };
 
+const renderError = (req, res) => {
+  res.send("Invalid URL. Try localhost:3000 to get back to home.");
+};
+
 module.exports = {
   createMsg,
   renderForm,
   renderIndex,
   renderMessages,
+  renderError,
 };
