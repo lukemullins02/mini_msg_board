@@ -1,6 +1,6 @@
 const messages = require("../db.js");
 
-const createMsg = async (req, res) => {
+const createMsg = (req, res) => {
   messages.push({
     text: req.body.text,
     user: req.body.user,
@@ -10,4 +10,9 @@ const createMsg = async (req, res) => {
   res.redirect("/");
 };
 
-module.exports = { createMsg };
+const renderForm = (req, res) => res.render("form");
+
+const renderIndex = (req, res) =>
+  res.render("index", { title: "Mini Messageboard", messages: messages });
+
+module.exports = { createMsg, renderForm, renderIndex };

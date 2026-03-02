@@ -1,13 +1,15 @@
 const { Router } = require("express");
-const { createMsg } = require("../controllers/msgController");
+const {
+  createMsg,
+  renderForm,
+  renderIndex,
+} = require("../controllers/msgController");
 const messages = require("../db.js");
 const msgRouter = Router();
 
-msgRouter.get("/", (req, res) =>
-  res.render("index", { title: "Mini Messageboard", messages: messages }),
-);
+msgRouter.get("/", renderIndex);
 
-msgRouter.get("/new", (req, res) => res.render("form"));
+msgRouter.get("/new", renderForm);
 
 msgRouter.post("/new", createMsg);
 
