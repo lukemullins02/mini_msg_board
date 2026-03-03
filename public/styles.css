@@ -123,6 +123,39 @@ body {
   transform: scale(1.1);
 }
 
-a {
+.user > a {
   color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  min-height: 45px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #657786;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.navbar > ul {
+  display: flex;
+  list-style: none;
+  gap: 1.3rem;
+  width: 100%;
+  padding-right: 40px;
+}
+
+.nav-right {
+  display: flex;
+  margin-left: auto;
+  gap: 25px;
+}
+
+.nav-right > li > a {
+  color: white;
+}
+
+.nav-right > li > a:hover {
+  cursor: pointer;
+  color: rgb(187, 187, 187);
 }
