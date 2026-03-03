@@ -95,19 +95,21 @@ body {
 }
 
 .card-container {
-  max-width: 500px;
+  width: 100%;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
-  width: 100%;
+
+  max-width: 500px;
   gap: 10px;
   border: solid 1px #657786;
   padding: 20px;
   border-radius: 5px;
   font-size: 1.1rem;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .user {
@@ -158,4 +160,64 @@ body {
 .nav-right > li > a:hover {
   cursor: pointer;
   color: rgb(187, 187, 187);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+}
+
+form > div > input {
+  background-color: black;
+  border: 1px solid #657786;
+  border-radius: 5px;
+  color: white;
+  padding-left: 5px;
+}
+
+form > div > textarea {
+  background-color: black;
+  border: 1px solid #657786;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  height: 100px;
+}
+form > input[type="submit"] {
+  background-color: black;
+  border: 1px solid #657786;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: transform;
+}
+
+form > input[type="submit"]:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+main {
+  width: 100%;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  width: 75%;
+  gap: 10px;
+  border: solid 1px #657786;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 1.3rem;
 }

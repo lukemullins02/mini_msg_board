@@ -1,13 +1,26 @@
 <head>
-  New Message
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
-<form method="POST" action="/new">
-  <label for="user">Name: </label>
-  <input type="text" name="user" id="user" required />
-
-  <label for="text">Message: </label>
-  <input type="text" name="text" id="text" required />
-
-  <input type="submit" value="Submit" />
-</form>
+<body class="roboto-text">
+  <%- include('navbar') %>
+  <main>
+    <form method="POST" action="/new">
+      <div>
+        <label for="user">Name </label>
+        <input type="text" name="user" id="user" required />
+      </div>
+      <div>
+        <label for="text">Message </label>
+        <textarea name="text" id="text" required>Hello world!</textarea>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </main>
+</body>

@@ -25,7 +25,6 @@ const renderMessages = (req, res) => {
   }
 
   res.render("details", {
-    title: "Details",
     message: messages[Number(req.params.index)],
   });
 };
