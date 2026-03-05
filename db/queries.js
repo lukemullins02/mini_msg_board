@@ -12,7 +12,13 @@ async function getAllPosts() {
   return rows;
 }
 
+async function getPost(id) {
+  const row = await pool.query(`SELECT * FROM messages WHERE id = ${id}`);
+  return row;
+}
+
 module.exports = {
   insertPost,
   getAllPosts,
+  getPost,
 };

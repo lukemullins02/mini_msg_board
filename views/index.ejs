@@ -10,7 +10,7 @@
     <div class="card-container">
     <% for (let i = 0; i < messages.length; i++) { %>
        <div class="card">
-        <p class="user"><%= messages[i].username %> <a href="/messages/<%= i %>"><svg class="expand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <p class="user"><%= messages[i].username %> <a href="/messages/<%= messages[i].id %>"><svg class="expand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 10L21 3M21 3H16.5M21 3V7.5M10 14L3 21M3 21H7.5M3 21L3 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg></a></p>
         <p><%= messages[i].text %></p>

@@ -11,12 +11,9 @@
   <body class="roboto-text">
     <%- include('navbar') %>
     <div class="card-detail">
-    <p><%= message.user %></p>
-    <p><%= message.text %></p>
-    <p>
-      <%= Intl.DateTimeFormat('en-US',
-      {timeStyle: 'short', dateStyle: 'short'}).format(message.added) %>
-    </p>
+      <p><%= message.username %></p>
+      <p><%= message.text %></p>
+      <p><%= message.added %></p>
     </div>
   </body>
 </html>

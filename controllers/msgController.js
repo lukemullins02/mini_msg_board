@@ -27,7 +27,7 @@ const createMsg = [
       });
     }
 
-    const { text, user } = req.body;
+    const { text, user } = matchedData(req);
     const added = Intl.DateTimeFormat("en-US", {
       timeStyle: "short",
       dateStyle: "short",
@@ -49,13 +49,17 @@ async function renderIndex(req, res) {
   });
 }
 
-const renderMessages = (req, res) => {
-  if (!messages[Number(req.params.index)]) {
-    throw new CustomNotFoundError("Message index out of bounds");
+const renderMessages = async (req, res) => {
+  const index = req.params.index;
+
+  if (!index) {
+    throw new CustomNotFoundError("Message doesn't exist");
   }
 
+  const message = await db.getPost(index);
+
   res.render("details", {
-    message: messages[Number(req.params.index)],
+    message: message.rows[0],
   });
 };
 
