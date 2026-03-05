@@ -1,23 +1,29 @@
-const messages = require("../db.js");
+const db = require("../db/queries");
 const CustomNotFoundError = require("../errors/CustomNotFoundError");
 
-const createMsg = (req, res) => {
-  messages.push({
-    text: req.body.text,
-    user: req.body.user,
-    added: new Date(),
-  });
+async function createMsg(req, res) {
+  const { text, user } = req.body;
+  const added = Intl.DateTimeFormat("en-US", {
+    timeStyle: "short",
+    dateStyle: "short",
+  }).format(new Date());
 
+  await db.insertPost(text, user, added);
   res.redirect("/");
-};
+}
 
 const renderForm = (req, res) => res.render("form");
 
-const renderIndex = (req, res) =>
+async function renderIndex(req, res) {
+  const messages = await db.getAllPosts();
+
+  console.log(messages);
+
   res.render("index", {
     title: "Mini Messageboard",
-    messages: messages,
+    messages: messages.rows,
   });
+}
 
 const renderMessages = (req, res) => {
   if (!messages[Number(req.params.index)]) {
